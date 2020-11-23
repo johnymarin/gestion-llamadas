@@ -12,5 +12,5 @@ public class ClienteDto {
     @Getter @Setter private String correo;
     @Getter @Setter private String direccion;
     @Getter @Setter private int telefonoFijo;
-    @Getter @Setter private int celular;
+
 }
