@@ -13,9 +13,9 @@ public class GestionLlamadasController {
     private Cliente clienteEntity;
 
     @RequestMapping (path = "/cliente")
-    public Cliente showCliente(@RequestParam(value = "clienteid") int clienteId,
+    public Cliente showCliente(@RequestParam(value = "clienteid") Long clienteNumeroDocumento,
                                @RequestParam(value = "cliente", defaultValue = "pepito perez") String cliente){
-        clienteEntity.setNumeroDocumento(clienteId);
+        clienteEntity.setNumeroDocumento(clienteNumeroDocumento);
         clienteEntity.setNombre(String.format( "el nombre es: %s", cliente));
         return clienteEntity;
     }
