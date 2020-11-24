@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 //FixMe: cannot resolve table clientes why? must i do execute dirty sqlcode? :(
-@Table(name="clientes")
+@Table(name="CLIENTES")
 @Component
 public class Cliente {
     @Id

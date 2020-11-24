@@ -18,8 +18,7 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
     private ModelMapper modelMapper;
 
-    // FixMe: wtf is autowiring on modelMapper ?
-    // Consider defining a bean of type 'org.modelmapper.ModelMapper' in your configuration.
+
     public ClienteService( ClienteRepository clienteRepository, ModelMapper modelMapper){
         this.clienteRepository = clienteRepository;
         this.modelMapper = modelMapper;
