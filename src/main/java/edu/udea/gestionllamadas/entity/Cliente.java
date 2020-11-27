@@ -36,4 +36,6 @@ public class Cliente {
     // ToDo: Ask about the  public boolean object o
 
 
+
+
 }

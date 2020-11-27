@@ -21,7 +21,7 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping
+    @PostMapping(consumes = {"application/JSON", "application/XML"})
     public ResponseEntity<ClienteDto> create(@RequestBody ClienteDto clienteDTO){
         ClienteDto clienteACrear = clienteService.create(clienteDTO);
         return new ResponseEntity<ClienteDto>(clienteACrear, null, HttpStatus.CREATED);
