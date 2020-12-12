@@ -1,9 +1,9 @@
 package edu.udea.estadoSolicitudes.service;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Solicitud {
@@ -14,10 +14,10 @@ public class Solicitud {
     private String motivo;
     private String descripcion;
     private String estado;
-    private date tiempoMaximoDerespuesta;
+    private String tiempoMaximoDerespuesta;
     private String evento;
 
-    public Solicitud(Long numeroRadicado, String motivo, String descripcion, String estado, date tiempoMaximoDerespuesta, String evento) {
+    public Solicitud(Long numeroRadicado, String motivo, String descripcion, String estado, String tiempoMaximoDerespuesta, String evento) {
         this.numeroRadicado = numeroRadicado;
         this.motivo = motivo;
         this.descripcion = descripcion;
@@ -25,6 +25,11 @@ public class Solicitud {
         this.tiempoMaximoDerespuesta = tiempoMaximoDerespuesta;
         this.evento = evento;
     }
+
+    public Solicitud() {
+
+    }
+
 
     public Long getNumeroRadicado() {
         return numeroRadicado;
@@ -58,11 +63,11 @@ public class Solicitud {
         this.estado = estado;
     }
 
-    public date getTiempoMaximoDerespuesta() {
+    public String getTiempoMaximoDerespuesta() {
         return tiempoMaximoDerespuesta;
     }
 
-    public void setTiempoMaximoDerespuesta(date tiempoMaximoDerespuesta) {
+    public void setTiempoMaximoDerespuesta(String tiempoMaximoDerespuesta) {
         this.tiempoMaximoDerespuesta = tiempoMaximoDerespuesta;
     }
 
