@@ -4,4 +4,8 @@ import edu.udea.estadoSolicitudes.service.Solicitud;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SolicitudRepository extends CrudRepository<Solicitud,Long> {
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/feature/vue_front

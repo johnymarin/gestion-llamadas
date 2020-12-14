@@ -14,15 +14,15 @@ public class Solicitud {
     private String motivo;
     private String descripcion;
     private String estado;
-    private date tiempoMaximoDerespuesta;
+    private String tiempoMaximoDerespuesta;
     private String evento;
 
-    public Solicitud(Long numeroRadicado, String motivo, String descripcion, String estado, date tiempoMaximoDerespuesta, String evento) {
+    public Solicitud(Long numeroRadicado, String motivo, String descripcion, String estado,  String evento) {
         this.numeroRadicado = numeroRadicado;
         this.motivo = motivo;
         this.descripcion = descripcion;
         this.estado = estado;
-        this.tiempoMaximoDerespuesta = tiempoMaximoDerespuesta;
+
         this.evento = evento;
     }
 
@@ -58,13 +58,9 @@ public class Solicitud {
         this.estado = estado;
     }
 
-    public date getTiempoMaximoDerespuesta() {
-        return tiempoMaximoDerespuesta;
-    }
 
-    public void setTiempoMaximoDerespuesta(date tiempoMaximoDerespuesta) {
-        this.tiempoMaximoDerespuesta = tiempoMaximoDerespuesta;
-    }
+
+
 
     public String getEvento() {
         return evento;
