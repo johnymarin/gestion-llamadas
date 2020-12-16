@@ -35,23 +35,23 @@ export default {
 
   data(){
     return{
-      clientes : null
+      Solicitud : null
     }
   },
 
   mounted() {
-    console.log('Hola vue desde mounted')
-    this.getClientes();
+    console.log('Hola vue desdeSolicitudes')
+    this.getSolicitud();
   },
 
   methods:{
-    getClientes(){
+    getSolicitud(){
       console.log('aca va el codigo de get clientes')
       axios
-        .get('http://localhost:3000/apiclientes')
+        .get('http://localhost:3000/solicitudes')
           .then( response => {
             console.log(response)
-
+            this.Solicitud=response.data
           })
         .catch( e=> console.log(e))
     }
