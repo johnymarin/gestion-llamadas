@@ -1,24 +1,46 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="SOLICITUDES"/>
+
+/*
+ numerodeRadicado;
+    String motivo;
+     descripcion;
+     estado;
+     tiempoMaximoDerespuesta;
+     evento;
+}*/
 
 
-    <div>
+  <div>
       <table>
-        <tbody>
-        <tr>
-          <td>
+          <tbody>
+            <tr>SOLICITUD</tr>
+                <td>{{Solicitud.numerodeRadicado}}</td>
+                <td>{{Solicitud.motivo}}</td>
+                <td>{{Solicitud.descripcion}}</td>
+                <td>{{Solicitud.estado}}</td>
+                <td>{{Solicitud.tiempoMaximoDerespuesta}}</td>
+                <td>{{Solicitud.evento}}</td>
+            <tr>CAMBIAR ESTADO POR:</tr>
+            <input class="add-search-input"
+              type="text"
+              v-model="newEstado"
+              @keyup.enter="cambiarestadoSolicitud">
 
-          </td>
-        </tr>
-        </tbody>
+            <tr>OBTENER SOLICITUD POR ID:</tr>
+             <input class="add-search-input"
+                   type="text"
+                   v-model="soli"
+                   @keyup.space="getSolicitud">
+          </tbody>
       </table>
-    </div>
+  </div>
 
   </div>
 
-
+save chek ok
 
 </template>
 
@@ -35,25 +57,41 @@ export default {
 
   data(){
     return{
-      Solicitud : null
+      Solicitud : null,
+      newEstado:'',
+      soli:'',
     }
   },
 
   mounted() {
-    console.log('Hola vue desdeSolicitudes')
-    this.getSolicitud();
+    console.log('Hola vue desde Solicitudes')
+   // this.getSolicitud();
+    // this.cambiarestadoSolicitud();
   },
 
   methods:{
     getSolicitud(){
       console.log('aca va el codigo de get clientes')
       axios
-        .get('http://localhost:3000/solicitudes')
+        .get('http://localhost:3000/solicitudes',{numerodeRadicado:this.soli})
           .then( response => {
             console.log(response)
             this.Solicitud=response.data
+            this.soli='';
           })
         .catch( e=> console.log(e))
+    },
+    cambiarestadoSolicitud(){
+      console.log('aca va el codigo dPARA CAMBIAR SOLICITUD')
+      axios.post('http://localhost:3000/solicitudes',{estado:this.newEstado})
+          .then( response => {
+            const data =response.data;
+            this.Solicitud.push(data);
+            this.newEstado='';
+            console.log(response)
+            this.Solicitud=response.data
+          })
+          .catch( e=> console.log(e))
     }
   }
 
