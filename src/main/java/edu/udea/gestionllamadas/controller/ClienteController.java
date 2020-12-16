@@ -5,7 +5,6 @@ import edu.udea.gestionllamadas.dto.ClienteDto;
 import edu.udea.gestionllamadas.service.ClienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
