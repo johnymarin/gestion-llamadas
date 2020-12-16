@@ -1,5 +1,7 @@
-package edu.udea.gestionllamadas;
+package edu.udea.estadoSolicitud;
 
+import edu.udea.estadoSolicitud.service.SolicitudService;
+import edu.udea.gestionllamadas.GestionLlamadasApplication;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +10,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class GestionLlamadasApplication {
-
+public class estadoSolicitudesApplication
+{
     public static void main(String[] args) {
         SpringApplication.run(GestionLlamadasApplication.class, args);
     }
@@ -28,7 +30,5 @@ public class GestionLlamadasApplication {
             }
         };
     }
+
 }
-
-
-
