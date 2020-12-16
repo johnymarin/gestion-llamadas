@@ -1,4 +1,4 @@
-# scaffold_vue
+# crud-app
 
 ## Project setup
 ```
