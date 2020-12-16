@@ -17,7 +17,7 @@ public class Solicitud {
     /*private String motivo;
    private String descripcion;
    private String estado;
-   private String tiempoMaximoDerespuesta;
+   private String tiempoMaximoDerespuesta;;
    private String evento;*/
     @Id
     @Getter @Setter private Long numerodeRadicado;
